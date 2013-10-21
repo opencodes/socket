@@ -11,7 +11,7 @@ window.onload = function() {
             messages.push(data.message);
             var html = '';
             for(var i=0; i<messages.length; i++) {
-                html += '<div class="bs-callout bs-callout-info"><p>'+messages[i] + '</p></div>';
+                html += '<div class="bs-callout"><div class="avtar"><span class="glyphicon glyphicon-user"></span></div><div class="message-content">'+messages[i] + '</div></div>';
             }
             content.innerHTML = html;
         } else {
