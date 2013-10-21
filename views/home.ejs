@@ -1,0 +1,30 @@
+<% include header.ejs %>
+<div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-12">
+          <form role="form" id="selfsearch-form">
+		  <div class="input-group">
+		    <input type="text" class="form-control" name="query" id="query-input">
+		    <span class="input-group-btn">
+		      <button class="btn btn-default" type="submit">Go!</button>
+		    </span>
+		    
+		  </div><!-- /input-group -->
+		  <small class=" text-muted">To add entry write entry in format <strong>eg. key :: value</strong>.</small>
+		  <div id="alert-msg"></div>
+		</form>
+				<dev id="msg-container" >
+				<% for (var k = 0;k < items.length; k++) { %>
+				      					<div class="bs-callout bs-callout-info">
+				        <h4><%= items[k].key %> <span class="time"><%= items[k].updated_at %> </span></h4>
+				        <p><%= items[k].value %></p>
+				      </div>
+										<% } %>
+				</dev>
+				<div id="result-container"	></div>	
+        </div>
+       
+   </div>
+<% include footer.ejs %>
+      
