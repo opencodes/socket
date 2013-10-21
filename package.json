@@ -13,6 +13,7 @@
     "connect-redis":"1.4.5",
     "connect":"2.9.0",
     "mysql":"2.0.0-alpha9",
-    "generic-pool":"1.0.9"
+    "generic-pool":"1.0.9",
+    "socket.io":"latest"
   }
 }
