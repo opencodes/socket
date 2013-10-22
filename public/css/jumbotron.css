@@ -14,7 +14,7 @@ body {
 .bs-callout {
   background-color: #F1F1F1;
   border-bottom: 1px solid #CCCCCC;
-  min-height: 51px;
+  min-height: 66px;
 }
 .bs-callout h4 {
   margin-top: 0;
@@ -49,15 +49,15 @@ body {
 #selfsearch-form{
 	margin-top:10px;
 }
-.avtar{
-	height:50px;
-	width:50px;
-	background:#ddd;
-	float:left;
-	position:absolute;
-	padding: 16px;
-	margin-right: 5px;
+.avtar {
+  background: none repeat scroll 0 0 #DDDDDD;
+  float: left;
+  height: 64px;
+  margin-right: 5px;
+  padding: 25px;
+  position: absolute;
+  width: 65px;
 }
 .message-content {
-  padding: 5px 10px 5px 60px;
+  padding: 5px 10px 5px 75px;
 }
