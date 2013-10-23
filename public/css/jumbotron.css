@@ -64,3 +64,6 @@ body {
 #query-input,#send {
   height: 65px;
 }
+.container.main {
+  margin-bottom:55px;
+}

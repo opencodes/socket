@@ -1,6 +1,8 @@
 module.exports = config = {
   "site_name": "Demandware  Open Ecommerce API",
   "version": "0.0.1",
+  baseurl : "http://127.0.0.1",
+  port:'3700',
   db_options: {
 	    host: 'localhost',
 	    port: 3306,

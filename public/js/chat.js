@@ -1,7 +1,6 @@
-window.onload = function() {
- 
+window.onload = function() { 
     var messages = [];
-    var socket = io.connect('http://192.168.1.2:3700');
+    var socket = io.connect('http://162.243.20.178:3700');
     var field = document.getElementById("query-input");
     var sendButton = document.getElementById("send");
     var content = document.getElementById("msg-container");
@@ -22,10 +21,10 @@ window.onload = function() {
     });
  
     $('#selfsearch-form').on('submit',function(e){
-		e.preventDefault();
-       
-            var text = field.value;
-            socket.emit('send', { message: text, username: 'Me' });
+		e.preventDefault();       
+        var text = field.value;
+        socket.emit('send', { message: text, username: 'Me' });
+        $('#query-input').val('');
     });
  
 };
