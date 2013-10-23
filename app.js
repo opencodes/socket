@@ -22,7 +22,7 @@ app.use(express.session({ secret: 'GFHSUSUSS112',expire: 8640000}));
 app.use(app.router);
 app.use(require('stylus').middleware(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
-var io = require('socket.io').listen(app.listen(app.get('port')),'162.243.20.178');
+var io = require('socket.io').listen(app.listen(app.get('port')));
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
