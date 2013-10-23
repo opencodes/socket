@@ -1,6 +1,6 @@
 window.onload = function() { 
     var messages = [];
-    var socket = io.connect('http://162.243.20.178:3700');
+    var socket = io.connect('http://162.243.20.178:1337');
     var field = document.getElementById("query-input");
     var sendButton = document.getElementById("send");
     var content = document.getElementById("msg-container");
