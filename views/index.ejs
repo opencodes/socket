@@ -1,15 +1,39 @@
 <% include header.ejs %>
  <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="container main">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-lg">
-          	<dev id="msg-container" ></dev>
-			        <div id="result-container"	></div>
+    <div id="wrap">
+      <!-- Fixed navbar -->
+      <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">I-Chat</a>
+          </div>
+          
+          <div class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Set Username" id='username'>
+            </div>
+          </div>
+          <div class="navbar-form navbar-right">
+            <div class="form-group">
+              Set your name here -
+            </div>
+          </div>
         </div>
-        <!--  -->
-        <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-         <form role="form" id="selfsearch-form">
+      </div>
+
+      <!-- Begin page content -->
+      <div class="container">
+        <div class="bs-docs-example">
+            <ul class="media-list" id="msg-container">
+              
+              
+            </ul>
+          </div>
+      </div>
+      
+      <div id="footer" class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        <form role="form" id="selfsearch-form">
            <div class="input-group">
             <input type="text" class="form-control" name="query" id="query-input" autocomplete="off">
             <span class="input-group-btn">
@@ -18,8 +42,7 @@
             
           </div><!-- /input-group -->
         </form>
-        </nav>  
-       <!--  -->
       </div>
-    </div> <!-- /container -->
+    </div>
+    </div>
 <% include footer.ejs %>   

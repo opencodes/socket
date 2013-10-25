@@ -55,7 +55,7 @@ body {
   height: 64px;
   margin-right: 5px;
   padding: 25px;
-  position: absolute;
+  position: relative;
   width: 65px;
 }
 .message-content {
@@ -65,5 +65,7 @@ body {
   height: 65px;
 }
 .container.main {
-  margin-bottom:55px;
+  height: 334px;
+  margin-bottom: 55px;
+  overflow: hidden;
 }
