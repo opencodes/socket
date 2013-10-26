@@ -16,16 +16,25 @@
       <!-- Begin page content -->
       <div class="container">
         <div class="bs-docs-example">
-            <ul class="media-list">
-              <li class="media">
+            <ul class="media-list user-list">
+              <% if (list && list.length >= 1) { %>
+              <% for (var k = 0;k < list.length; k++) { %>
+		      <li class="media">
                 <a href="#" class="pull-left">
                   <img data-src="holder.js/64x64" class="media-object" alt="64x64" style="width: 64px; height: 64px;" src="/img/me.jpg">
                 </a>
                 <div class="media-body">
-                  <h4 class="media-heading">Rajesh Kumar Jha</h4>
-                  <p> </p>
+                  <h4 class="media-heading"><%= list[k].nickname %></h4>
+                  <p><strong >Email : </strong> <%= list[k].email_id %> </p>
                 </div>
               </li>
+			  <% } %>
+              <% } else { %>
+              <li class="media">
+                  <h4 class="media-heading">No friends in your list</h4>
+                </div>
+              </li>
+              <% } %>
             </ul>
           </div>
       </div>

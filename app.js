@@ -31,6 +31,7 @@ if ('development' == app.get('env')) {
 require('./routes')(app);
 
 var io = require('socket.io').listen(app.listen(app.get('port')));
+console.log('App listening on '+app.get('port'))
 io.sockets.on('connection', function (socket) {
     socket.on('send', function (data) {
         io.sockets.emit('message', data);

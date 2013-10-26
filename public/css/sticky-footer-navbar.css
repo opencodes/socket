@@ -39,3 +39,5 @@ code {  font-size: 80%;}
 .media-list {  margin-bottom: 0;}
 .navbar-default {  background-color: #DDDDDD; }
 #query-input,#send {  height: 60px;}
+
+.user-list li:hover{background:#eee;}
