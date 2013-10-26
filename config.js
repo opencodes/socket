@@ -8,7 +8,7 @@ module.exports = config = {
 	    port: 3306,
 	    user: 'root',
 	    password: '',
-	    database: 'self_search'
+	    database: 'ichat'
   },
   redis: {
 	    host: '127.0.0.1',

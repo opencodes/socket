@@ -1,0 +1,17 @@
+<% include ../header.ejs %>
+<div class="container">
+
+      <form class="form-signin" action="/user/login" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" class="form-control" placeholder="Email address" autofocus name="username">
+        <br/>
+        <input type="password" class="form-control" placeholder="Password" name="userpass">
+        <br/>
+        <button class="btn btn-lg btn-danger btn-block" type="submit">Sign in</button>
+      </form>
+      <hr/>
+      <a href="/user/register/"><button class="btn btn-lg btn-primary  btn-block" type="submit">Register</button></a>
+
+</div> <!-- /container -->
+
+<% include ../footer.ejs %>

@@ -5,19 +5,14 @@ var Query = require('./sql');
 
 
 var User = {
-    isAdminUser:function(email_id,callback){
-    var sub_query = '';
-    if(email_id && !util.isArray(email_id)){
-      if(util.isArray(email_id)){
-        email_id = email_id.join();
-        sub_query = ' where '+table+'.email_id IN('+email_id+')';
-      }
-      else{
-        sub_query = ' where '+table+'.email_id ="'+ email_id+'"';
-      }
-    }
-    var sql = 'SELECT  *  FROM '+ table   + sub_query + " AND `user_type`='admin'" ; 
-  
+	/**
+	 * get friend list
+	 * @param id
+	 * @param callback
+	 */
+    getFriendList:function(id,callback){
+    //Join query to get user friend list	
+    var sql = 'SELECT *	FROM `friends` INNER JOIN user ON user.id = friends.friend_id WHERE friends.user_id ='+id; 
     util.log('Query:'+sql);
     Db.query(
         sql,
@@ -31,6 +26,11 @@ var User = {
          }
      ); 
     },
+    /**
+     * 
+     * @param email_id
+     * @param callback
+     */
     by_username:function(email_id,callback){
     var sub_query = '';
       if(email_id && !util.isArray(email_id)){
@@ -57,10 +57,10 @@ var User = {
            }
        ); 
       },
-      /*
-       * info post by cat id
-       * @param 
+      /**
        * 
+       * @param data
+       * @param callback
        */
       save:function(data,callback){
         var subquery = 'SET ';
@@ -71,7 +71,7 @@ var User = {
             if(index!='id')
             values.push(index +"='"+data[index]+"' ");
           }
-          subquery += values.join(',')
+          subquery += values.join(',');
           if(data.id && data.id!=''){
             subquery+=" where id='"+Number(data.id)+"'";
           }          
@@ -90,6 +90,11 @@ var User = {
              }
          ); 
       },
+      /**
+       * 
+       * @param filters
+       * @param callback
+       */
       all:function(filters,callback){
     	  Query.select(null,table,function(err,result){
     		  if(!err){
@@ -98,8 +103,13 @@ var User = {
     			  callback(err,null);
     		  }
     		  
-    	  })
+    	  });
       },
+      /**
+       * 
+       * @param id
+       * @param callback
+       */
       userbyid:function(id,callback){
     	  var filters = {'id':id};
     	  Query.select(filters,table,function(err,result){
