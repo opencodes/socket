@@ -1,6 +1,6 @@
 window.onload = function() { 
     var messages = [];
-    var socket = io.connect('http://162.243.20.178');
+    var socket = io.connect('http://localhost:8012');
     var field = document.getElementById("query-input");
     var content = document.getElementById("msg-container");
     socket.on('message', function (data) {
@@ -40,7 +40,7 @@ window.onload = function() {
     $('#selfsearch-form').on('submit',function(e){
 		e.preventDefault();       
         var text = field.value;
-        socket.emit('send', { message: text, username:$('#username').val() });
+        socket.emit('rajesh', { message: text, username:$('#username').val() });
         $('#query-input').val('');
         var currentscroll = $(window).scrollTop();
         $(window).scrollTop(currentscroll + $('.bs-callout:last').height());

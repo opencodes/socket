@@ -28,6 +28,25 @@ var User = {
     },
     /**
      * 
+     * @param friend_id
+     */
+    getUserInfo : function(friend_id,callback){
+    	var sql = 'SELECT *	FROM `user` WHERE id ='+friend_id+';'; 
+        util.log('Query:'+sql);
+        Db.query(
+            sql,
+            function selectCb(err, results) {
+              if (!err) {
+                return callback(results, null); 
+              }
+              else{
+                return callback(null, err); 
+              }            
+             }
+         ); 
+    },
+    /**
+     * 
      * @param email_id
      * @param callback
      */

@@ -1,0 +1,40 @@
+<% include ../header.ejs %>
+ <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div id="wrap">
+      <!-- Fixed navbar -->
+      <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">I-Chat</a>
+            <input type="hidden"  id='username' value="<%= user.nickname %>">
+          </div>
+        </div>
+      </div>
+
+      <!-- Begin page content -->
+      <div class="container">
+        <div class="bs-docs-example">
+            <ul class="media-list" id="msg-container">
+              
+              
+            </ul>
+          </div>
+      </div>
+      
+      <div id="footer" class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        <form role="form" id="selfsearch-form">
+           <div class="input-group">
+            <input type="text" class="form-control" name="query" id="query-input" autocomplete="off">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit" id="send">Go!</button>
+            </span>
+            
+          </div><!-- /input-group -->
+        </form>
+      </div>
+    </div>
+    </div>
+<script src="/js/chat.js"></script>
+<script src='/socket.io/socket.io.js'></script>
+<% include ../footer.ejs %>   

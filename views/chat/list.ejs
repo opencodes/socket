@@ -9,7 +9,6 @@
             
             <a class="navbar-brand" href="#">I-Chat</a>
           </div>
-          
         </div>
       </div>
 
@@ -19,7 +18,7 @@
             <ul class="media-list user-list">
               <% if (list && list.length >= 1) { %>
               <% for (var k = 0;k < list.length; k++) { %>
-		      <li class="media">
+		            <li class="media" data-url="/chat/user/<%= list[k].id %>">
                 <a href="#" class="pull-left">
                   <img data-src="holder.js/64x64" class="media-object" alt="64x64" style="width: 64px; height: 64px;" src="/img/me.jpg">
                 </a>

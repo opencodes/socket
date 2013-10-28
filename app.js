@@ -27,11 +27,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
-
+var io = require('socket.io').listen(app.listen(app.get('port')));
 require('./routes')(app);
 
-var io = require('socket.io').listen(app.listen(app.get('port')));
-console.log('App listening on '+app.get('port'))
+
+console.log('App listening on '+app.get('port'));
 io.sockets.on('connection', function (socket) {
     socket.on('send', function (data) {
         io.sockets.emit('message', data);

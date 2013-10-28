@@ -13,6 +13,7 @@ module.exports = function(app){
 		}		
 	});
 	app.get('/user/login', user.loginform);
+    app.get('/chat/user/:id',chat.userinfo,chat.renderchat);
     app.get('/chat/list/',chat.list,chat.render);
     app.get('/user/logout/',user.logout);
     app.get('/user/register/',user.registerform);
